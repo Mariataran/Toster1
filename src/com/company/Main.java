@@ -6,18 +6,30 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<Player> players = new LinkedList<>();
-        players.add(new Computer("C1", new LimitIntellect(14)));
-        players.add(new Computer("C2", new LimitIntellect(20)));
-        players.add(new Human("Ya", new ConsoleIntellect()));
-        Dealer dealer = new Dealer();
-        players.add(dealer);
 
-        for (Player player : players) {
-            dealer.deal(player);
-            dealer.deal(player);
-            System.out.println(player.hand);
+        Tabke table = new Tabke();
+        while(true){
+            table.makeBets();
+            table.dealCards();
+            table.playGame();
+            table.decideWinners();
+            table.payBets();
+            table.discardCards();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //игра
         for (Player player : players) {
             while (true) {
                 System.out.println(player.hand.getScore() + " " + player.hand);
@@ -29,6 +41,8 @@ public class Main {
                     dealer.deal(player);
             }
         }
+
+        //опр. победителей
         for (Player player : players) {
             if (player != dealer) {
                 if (player.hand.getScore() > 21)

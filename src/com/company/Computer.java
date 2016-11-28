@@ -5,8 +5,15 @@ package com.company;
  */
 public class Computer extends Player{
 
-    public Computer(String name, Intellect intellect) {
-        super(name, intellect);
+    static String names[]={"Roberta", "Snegana", "Florentina", "Kristina", "Natasha", "Phoxtrot" };
+    public Computer(Intellect intellect) {
 
+        super("", intellect);
+        //1: выбрать случайное имя из массива
+        int randomnumber = (int) (Math.random()*Computer.names.length);
+
+        //2: присвоить эт имя компуктеру
+        name = names[randomnumber];
+       }
     }
-}
+

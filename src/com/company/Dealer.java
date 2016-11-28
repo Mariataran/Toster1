@@ -8,7 +8,7 @@ public class Dealer extends Computer {
     Deck deck = new Deck();
 
     public Dealer() {
-        super("dealer", new DealerIntellect());
+        super(new DealerIntellect());
     }
 
 
@@ -16,4 +16,5 @@ public class Dealer extends Computer {
         Card current = deck.pop();
         player.take(current);
     }
+
 }
