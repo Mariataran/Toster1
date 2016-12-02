@@ -7,4 +7,5 @@ import java.util.Scanner;
  */
 public class Concole_Better extends Bets_Decision {
     private Scanner in = new Scanner(System.in);
+    в
 }
