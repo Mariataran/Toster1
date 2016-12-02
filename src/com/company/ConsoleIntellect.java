@@ -11,7 +11,7 @@ public class ConsoleIntellect extends Intellect {
     @Override
     public Command decide(int score) {
         while(true) {
-            System.out.println("HIT/STAND, bleat?");
+            System.out.println("HIT/STAND, a?");
             String c = in.nextLine();
             if ("hit".startsWith(c.toLowerCase()))
                 return Command.HIT;

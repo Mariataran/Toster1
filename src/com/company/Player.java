@@ -8,10 +8,16 @@ public abstract class Player {
     private Intellect intellect;
     String name;
     Condition con = Condition.PLAYER_IN_GAME;
+    Integer balance;
+    Integer reserve_balance;
+    private Bets_Decision bets_decision;
 
     public Player(String name, Intellect intellect) {
         this.intellect = intellect;
         this.name = name;
+        this.balance = 1000;
+        this.reserve_balance = 0;
+        this.bets_decision = bets_decision;
     }
 
     public void take(Card current) {
@@ -24,5 +30,10 @@ public abstract class Player {
         if (score > 21)
             return Command.STAND;
         return intellect.decide(score);
+    }
+
+    public void makeBets() {
+
+
     }
 }
